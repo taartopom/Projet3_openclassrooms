@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#0287c3</color>
+    <color name="colorAccent">#FF80AB</color>
+    <color name="white">#FFF</color>
+    <color name="pink">#FF80AB</color>
+    <color name="black">#000000</color>
+    <color name="smoke">#E6E6E6</color>
+    <color name="or">#F7FE2E</color>
+
+</resources>

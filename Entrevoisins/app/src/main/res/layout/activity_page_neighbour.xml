@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6E6E6">
+
+    <!-- avatar du voisin -->
+    <ImageView
+        android:id="@+id/activity_page_neighbour_img_avatar"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="#c3c3c3" />
+
+    <!-- la flèche de retour -->
+    <ImageView
+        android:id="@+id/activity_page_neighbour_btn_return_list"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_left" />
+
+    <!-- prénom du voisin dans l'avatar -->
+    <TextView
+        android:id="@+id/activity_page_neighbour_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/activity_page_neighbour_img_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="14dp"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        tools:text="Prénom"/>
+
+    <!-- Bouton favoris -->
+    <ImageView
+        android:id="@+id/activity_page_ic_circle"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:tint="@color/white"
+        android:layout_marginEnd="10dp"
+        app:srcCompat="@drawable/ic_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_page_neighbour_img_avatar"
+        app:layout_constraintBottom_toTopOf="@id/cardview_info"
+        android:background="@color/smoke"/>
+
+    <ImageView
+        android:id="@+id/activity_page_ic_star_favoris"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:tint="@color/black"
+        app:srcCompat="@drawable/ic_star"
+        app:layout_constraintEnd_toEndOf="@+id/activity_page_ic_circle"
+        app:layout_constraintStart_toStartOf="@+id/activity_page_ic_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_page_ic_circle"
+        app:layout_constraintTop_toTopOf="@+id/activity_page_ic_circle"/>
+
+
+
+
+    <!-- carte contenant les infos -->
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardview_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_page_neighbour_img_avatar"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="1dp"
+        card_view:contentPadding="5dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <!-- Prénom du voisin  -->
+            <TextView
+                android:id="@+id/container_info_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="@id/container_info_ic_address"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Prenom" />
+
+            <!-- Adresse du voisin  -->
+            <ImageView
+                android:id="@+id/container_info_ic_address"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:tint="@color/pink"
+                app:layout_constraintBottom_toTopOf="@id/container_info_ic_phone"
+                app:layout_constraintTop_toBottomOf="@+id/container_info_name_tv"
+                app:srcCompat="@drawable/ic_address" />
+
+            <TextView
+                android:id="@+id/container_info_address_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/container_info_ic_address"
+                app:layout_constraintTop_toBottomOf="@+id/container_info_name_tv"
+                tools:text="Votre adresse" />
+
+            <!-- tel du voisin  -->
+            <ImageView
+                android:id="@+id/container_info_ic_phone"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:tint="@color/pink"
+                app:layout_constraintBottom_toTopOf="@id/container_info_ic_link"
+                app:layout_constraintTop_toBottomOf="@id/container_info_ic_address"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/container_info_phone_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/container_info_ic_phone"
+                app:layout_constraintTop_toBottomOf="@id/container_info_address_tv"
+                tools:text="+33 6 86 57 90 14" />
+
+            <!-- lien reseau-sociaux du voisin  -->
+            <ImageView
+                android:id="@+id/container_info_ic_link"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:tint="@color/pink"
+                app:layout_constraintTop_toBottomOf="@id/container_info_ic_phone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/ic_link" />
+
+            <TextView
+                android:id="@+id/container_info_links_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/container_info_ic_link"
+                app:layout_constraintTop_toBottomOf="@id/container_info_phone_tv"
+                tools:text="adresse du lien" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <!-- carte contenant la présentation du voisin -->
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        card_view:cardCornerRadius="4dp"
+
+        card_view:cardElevation="1dp"
+        card_view:contentPadding="5dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/container_description_short_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/container_description_long_tv"
+                tools:text="A propos de moi"/>
+
+            <TextView
+                android:id="@+id/container_description_long_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/container_description_short_tv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>
