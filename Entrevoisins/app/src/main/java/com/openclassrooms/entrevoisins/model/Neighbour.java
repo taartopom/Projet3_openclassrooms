@@ -1,14 +1,15 @@
 package com.openclassrooms.entrevoisins.model;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  * Model object representing a Neighbour
  */
-public class Neighbour {
+public class Neighbour extends ArrayList<String> {
 
     /** Identifier */
-    private long id;
+    private Integer id;
 
     /** Full name */
     private String name;
@@ -25,13 +26,15 @@ public class Neighbour {
     /** About me */
     private String aboutMe;
 
+    private String links;
+
     /**
      * Constructor
      * @param id
      * @param name
      * @param avatarUrl
      */
-    public Neighbour(long id, String name, String avatarUrl, String address,
+    public Neighbour(Integer id, String name, String avatarUrl, String address,
                      String phoneNumber, String aboutMe) {
         this.id = id;
         this.name = name;
@@ -41,18 +44,29 @@ public class Neighbour {
         this.aboutMe = aboutMe;
     }
 
+    public Neighbour(Integer id, String name, String avatarUrl, String address,
+                     String phoneNumber, String aboutMe, String links) {
+        this.id = id;
+        this.name = name;
+        this.avatarUrl = avatarUrl;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.aboutMe = aboutMe;
+        this.links = links;
+    }
+
+
+
     public long getId() {
         return id;
     }
-
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -60,7 +74,6 @@ public class Neighbour {
     public String getAvatarUrl() {
         return avatarUrl;
     }
-
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
     }
@@ -68,7 +81,6 @@ public class Neighbour {
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -76,7 +88,6 @@ public class Neighbour {
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -84,9 +95,15 @@ public class Neighbour {
     public String getAboutMe() {
         return aboutMe;
     }
-
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
+    }
+
+    public String getLinks() {
+        return links;
+    }
+    public void setLinks(String links) {
+        this.links = links;
     }
 
     @Override

@@ -1,6 +1,8 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
@@ -51,7 +54,20 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
             }
         });
+
+        //pour acceder à la page détaillée du voisin
+        holder.mNeighbourAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("DEBUG", "avatar clicked");
+                Intent intentDetail =  new Intent(view.getContext(),PageDetailsNeighbourActivity.class);
+                intentDetail.putExtra("neighbourId", neighbour.getId());
+                view.getContext().startActivity(intentDetail);
+                Log.i("DEBUG", "New intent open ok");
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
